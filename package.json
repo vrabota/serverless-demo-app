@@ -15,8 +15,12 @@
     ]
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.49.0",
+    "@aws-sdk/lib-dynamodb": "^3.49.0",
+    "@aws-sdk/util-dynamodb": "^3.49.0",
     "@serverless-stack/cli": "0.61.1",
     "@serverless-stack/resources": "0.61.1",
-    "aws-cdk-lib": "2.7.0"
+    "aws-cdk-lib": "2.7.0",
+    "uuid": "^8.3.2"
   }
 }
