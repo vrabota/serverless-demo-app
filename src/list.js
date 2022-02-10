@@ -1,5 +1,5 @@
 import { QueryCommand } from '@aws-sdk/client-dynamodb';
-import { marshall } from "@aws-sdk/util-dynamodb";
+import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
 
 import handler from './util/handler';
 import { client } from './util/dynamodb';
@@ -17,8 +17,6 @@ export const main = handler(async (event) => {
             ":userId": event.requestContext.authorizer.iam.cognitoIdentity.identityId,
         }),
     }));
-
     // Return the retrieved item
-    return result.Items;
-
+    return result.Items.map(item => unmarshall(item));
 });

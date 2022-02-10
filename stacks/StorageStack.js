@@ -9,7 +9,7 @@ export default class StorageStack extends sst.Stack {
         this.table = new sst.Table(this, 'Notes', {
             fields: {
                 userId: sst.TableFieldType.STRING,
-                noteId: sst.TableFieldType.STRING,
+                noteId: sst.TableFieldType.STRING
             },
             primaryIndex: { partitionKey: 'userId', sortKey: 'noteId' }
         });

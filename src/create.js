@@ -11,7 +11,7 @@ export const main = handler(async (event) => {
         userId: event.requestContext.authorizer.iam.cognitoIdentity.identityId,
         noteId: uuidv1(),
         content: data.content,
-        attachment: data.attachment,
+        attachment: data.attachment || '',
         createdAt: Date.now(),
     };
     await client.send(new PutItemCommand({
